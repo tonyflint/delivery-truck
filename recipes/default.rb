@@ -36,5 +36,6 @@ end
 # If the user specified a supermarket server lets install the knife plugin
 chef_gem 'knife-supermarket' do
   only_if { share_cookbook_to_supermarket? }
+  version '0.2.1'
   action :install
 end
