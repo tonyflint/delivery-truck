@@ -27,7 +27,7 @@ end
 # Temporary workaround until chefdk installs chef-sugar.
 chef_gem 'chef-sugar' do
   # Trying to workaround the issue https://github.com/chef/chef/issues/2962
-  version '3.1.1'
+  version '>0'
   # We always ride the latest version of chef-sugar. This could prove dangerous
   # but it more closely matches the CD philosophy which Delivery implements!
   # action :upgrade
@@ -36,6 +36,6 @@ end
 # If the user specified a supermarket server lets install the knife plugin
 chef_gem 'knife-supermarket' do
   only_if { share_cookbook_to_supermarket? }
-  version '0.2.1'
+  version '>0'
   action :install
 end
