@@ -25,6 +25,13 @@ chef_gem 'chefspec' do
   version '4.1.1'
 end
 
+# Berks API Client version 1.3.0 has bugs around SSL Certificates
+# We will install the version 1.2.1 that is currently working
+chef_gem 'berkshelf-api-client' do
+  compile_time false
+  version '1.2.1'
+end
+
 # Temporary workaround until chefdk installs chef-sugar.
 chef_gem 'chef-sugar' do
   compile_time false
